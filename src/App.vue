@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { useStore } from "vuex";
 import { isNil, defaultTo, path } from "ramda";
 // import pro168 from "@/assets/images/pro168_logo.png";
@@ -34,11 +34,6 @@ export default {
       // const default = defaultTo("layout-error");
       // default(path(["meta", "layout"], store.state.route))
       return currentLayout;
-    });
-
-    onMounted(() => {
-      // computeSize();
-      // window.addEventListener("resize", computeSize);
     });
 
     return {

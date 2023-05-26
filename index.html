@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="description"
-    content="just a start project">
+  <meta name="description" content="just a start project">
   <meta name="subject" content="<%= subject %>">
   <meta name="keywords" content="<%= keyword %>">
   <!-- <link id="icon" rel="icon" href="/public/default_foreground.png"> -->
@@ -15,9 +14,9 @@
     <%- title %>
   </title>
   <script rel="preload" type="text/javascript">
-   const preloadFns = () => {
-    console.log("proload before main.js");
-   }
+    const preloadFns = () => {
+      console.log("proload before main.js");
+    }
   </script>
 </head>
 
@@ -25,6 +24,8 @@
   <div id="app"></div>
   <!-- built files will be auto injected -->
   <script type="module" src="/src/main.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

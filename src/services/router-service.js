@@ -22,9 +22,4 @@ const router = createRouter({
   },
 });
 
-router.beforeEach(async (to, from, next) => {
-  console.log(to);
-  next();
-});
-
 export default router;

@@ -10,7 +10,13 @@ export default defineConfig(({ mode }) => {
   return {
     base: "./",
     plugins: [
-      vue(),
+      vue({
+        template: {
+          compilerOptions: {
+            isCustomElement: (tag) => tag.startsWith("ion-"),
+          },
+        },
+      }),
       eslintPlugin({
         cache: false,
       }),

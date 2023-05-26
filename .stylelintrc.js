@@ -8,7 +8,7 @@ module.exports = {
     "at-rule-no-unknown": [
       true,
       {
-        ignoreAtRules: ["extends", "tailwind"],
+        ignoreAtRules: ["extends", "tailwind", "apply", "components", "utilities", "screen"],
       },
     ],
     "block-no-empty": null,

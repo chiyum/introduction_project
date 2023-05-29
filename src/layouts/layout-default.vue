@@ -1,11 +1,11 @@
 <template>
-  <div class="layout-default-nav">
+  <div class="layout-default-nav" :class="{ show: isShowNav }">
     <div
       class="layout-default-nav-logo"
       :class="{ 'layout-default-nav-logo--jump': isAnimation }"
       @mouseenter="logoAnimation"
     >
-      <svg class="layout-default-nav-logo-brackets left">
+      <!-- <svg class="layout-default-nav-logo-brackets left">
         <line
           x1="0"
           y1="0"
@@ -20,7 +20,7 @@
           y2="0"
           style="stroke: var(--purple); stroke-width: 8"
         />
-      </svg>
+      </svg> -->
       <!-- <img
         src="@/assets/images/banner/api_placeholder_boardgame_single.png"
         alt=""
@@ -29,7 +29,7 @@
         <h1>G</h1>
         <h3>eorge</h3>
       </div>
-      <svg class="layout-default-nav-logo-brackets right">
+      <!-- <svg class="layout-default-nav-logo-brackets right">
         <line
           x1="50"
           y1="50"
@@ -44,9 +44,12 @@
           y2="50"
           style="stroke: var(--purple); stroke-width: 8"
         />
-      </svg>
+      </svg> -->
     </div>
-    <ul class="layout-default-nav-list">
+    <ul
+      class="layout-default-nav-list"
+      :class="[`layout-default-nav-list--${locale}`]"
+    >
       <li
         class="layout-default-nav-list-item"
         v-for="item in navs"
@@ -95,7 +98,15 @@
       </div>
     </div>
   </div>
-  <div class="layout-default-main">
+  <div class="layout-default-main" :class="{ show: isShowNav }">
+    <div class="layout-default-nav-mobile">
+      <div
+        class="layout-default-nav-mobile-btn"
+        @click="isShowNav = !isShowNav"
+      >
+        <div></div>
+      </div>
+    </div>
     <slot />
   </div>
 </template>
@@ -107,9 +118,9 @@ import { useRouter } from "vue-router";
 import storage from "@/services/storage-service";
 export default {
   setup() {
-    const { t, setPrefix, change: changeLocale } = useI18n();
+    const { t, setPrefix, change: changeLocale, locale } = useI18n();
     const router = useRouter();
-    console.log(storage);
+    const isShowNav = ref(false);
     setPrefix({
       $nav: "app.nav",
     });
@@ -163,7 +174,9 @@ export default {
       onChange,
       logoAnimation,
       navs,
+      locale,
       language,
+      isShowNav,
       isAnimation,
     };
   },
@@ -175,6 +188,8 @@ export default {
 .layout-default {
   &-nav {
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,14 +197,16 @@ export default {
     padding: 0 0 3rem;
     width: 350px;
     height: 100%;
+    color: #fff;
     background: url("@/assets/images/match-bg.png") var(--grey2) no-repeat
       center / cover;
-    color: #fff;
     cursor: default;
+    overflow: hidden;
+    transition: all 0.5s;
     &-logo {
       position: relative;
       margin: 3rem 0rem 0;
-      width: 220px;
+      // width: 220px;
       letter-spacing: 2.2px;
       &-brackets {
         position: absolute;
@@ -208,7 +225,8 @@ export default {
         @include flex-center-center;
         color: #fff;
         height: 7rem;
-        font-family: Comic Sans MS;
+        // font-family: Comic Sans MS;
+        font-family: "Montserrat", sans-serif;
         h1 {
           font-size: 3rem;
         }
@@ -237,10 +255,11 @@ export default {
         justify-content: flex-start;
         padding: 0.2rem 1.5rem;
         margin: 0.5rem 0;
-        font-weight: 400;
+        font-weight: 300;
         border-bottom: 1px solid #444444;
         cursor: pointer;
         transition: color 0.3s;
+        letter-spacing: 30px;
         &-icon {
           font-size: 1.2rem;
           margin-right: 1.5rem;
@@ -255,6 +274,11 @@ export default {
         }
         &:hover {
           color: var(--purple);
+        }
+      }
+      &.layout-default-nav-list--en {
+        .layout-default-nav-list-item {
+          letter-spacing: 8px;
         }
       }
     }
@@ -273,17 +297,66 @@ export default {
         color: var(--purple);
       }
       select {
-        padding: 0.3rem 0.8rem;
+        padding: 0 0.8rem;
+        padding-right: 1.4rem;
         margin-right: 0.5rem;
+        height: 2rem;
+        font-size: 0.8rem;
         color: #fff;
-        background: #1e0f24;
+        // background: #1e0f24;
         border-radius: 8px;
+        background: url("@/assets/images/arror_down.svg") #1e0f24 no-repeat 94%
+          center / 1rem;
+        -moz-appearance: none; /* Firefox */
+        -webkit-appearance: none; /* Safari and Chrome */
+        appearance: none;
+      }
+    }
+    &-mobile {
+      display: none;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 1.2rem;
+      height: 3.5rem;
+      background: var(--black2);
+      &-btn {
+        @include flex-center-center;
+        position: relative;
+        width: 2.5rem;
+        height: 2rem;
+        background: var(--grey2);
+        border-radius: 2px;
+        & > div {
+          width: 60%;
+          height: 2px;
+          background: var(--purple);
+          &::after,
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: 60%;
+            height: 2px;
+            background: var(--purple);
+          }
+          &::before {
+            top: 25%;
+          }
+          &::after {
+            top: 75%;
+          }
+        }
       }
     }
   }
   &-main {
     margin-left: 350px;
     width: calc(100% - 350px);
+    background: var(--black2);
+    transition: all 0.5s;
   }
 }
 @keyframes jump {
@@ -316,6 +389,30 @@ export default {
   90% {
     -webkit-transform: translate3d(0, -4px, 0);
     transform: translate3d(0, -4px, 0);
+  }
+}
+/* RWD */
+
+@media (max-width: 980px) {
+  .layout-default {
+    &-nav {
+      left: -350px;
+      &-mobile {
+        display: flex;
+      }
+      &.show {
+        width: 290px;
+        left: 0;
+      }
+    }
+    &-main {
+      margin-left: 0;
+      width: 100%;
+      &.show {
+        margin-left: 290px;
+        width: calc(100% - 290px);
+      }
+    }
   }
 }
 </style>

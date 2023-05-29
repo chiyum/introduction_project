@@ -6,5 +6,5 @@ export default {
   "nav.contact": "Contact",
   "nav.project": "Project",
   "nav.lang": "Current language: English",
-  "nav.lang.select": "Please select the language",
+  "nav.lang.select": "select language",
 };

@@ -3,7 +3,8 @@
 @import "scss/mixin.scss";
 
 :root {
-  --black: #111111;
+  --black: #121213;
+  --black2: #231b28;
   --orange: #e9700e;
   --grey: #262626;
   --grey2: #38343f;
@@ -165,9 +166,9 @@ input:-webkit-autofill:active {
 
 .btn {
   @include flex-center-center;
-  min-width: 5rem;
+  min-width: 4rem;
   height: 2rem;
   color: #fff;
-  border-radius: 9999px;
+  border-radius: 8px;
   background: linear-gradient(180deg, #9f1be9 0%, #781db8 100%);
 }

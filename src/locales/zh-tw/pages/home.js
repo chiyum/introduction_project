@@ -1,9 +1,10 @@
 export default {
   title: "首頁",
-  "in.home": "在首頁",
-  "router.link": "前往登入頁",
-  "modal.swal": "sweetAlert彈窗",
-  "modal.swal.title": "標題",
-  "modal.vip": "vip彈窗",
-  "notify.vip.title": "恭喜您vip等級晉升為",
+  "self.name": "你好！我的名字是",
+  name: "黃勝弘",
+  "self.profession": "我是",
+  "self.profession.color": "我是",
+  "self.read": "了解我更多",
+  "self.caption":
+    "我是一名熱愛網頁設計和開發的前端工程師。一年多以來，我利用我的HTML、CSS、JavaScript等技能，不斷探索和創新。一次，我成功地手工製作了Swiper和樹狀結構等插件，這不僅讓我更深入理解了這些工具的工作原理，也讓我學到了如何有效解決問題。我擁有與開發者、設計師和項目經理進行有效溝通的能力，並且我總是積極配合公司的進度，甚至不介意加班。我熱愛學習新的技術和工具，期待在這個公司中能有更多的成長和學習機會。",
 };

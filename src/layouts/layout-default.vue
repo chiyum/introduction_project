@@ -68,6 +68,7 @@
         <ion-icon
           class="layout-default-nav-actions-icon"
           name="settings"
+          @click="language.isCanges = true"
         ></ion-icon>
         <div>{{ t("$nav.lang") }}</div>
       </div>
@@ -83,13 +84,6 @@
             >
               {{ item.label }}
             </option>
-            <!-- <option value="">請選擇語言</option>
-            <option value="zh-tw" selected>
-              {{ "中文" }}
-            </option>
-            <option value="en">
-              {{ "英文" }}
-            </option> -->
           </select>
         </div>
         <div class="btn" @click="onChange">
@@ -151,7 +145,7 @@ export default {
         { value: "zh-tw", label: "繁體中文" },
         { value: "en", label: "English" },
       ],
-      isCanges: true,
+      isCanges: false,
       current: "", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
     });
     const isAnimation = ref(false);
@@ -223,7 +217,7 @@ export default {
       }
       &-font {
         @include flex-center-center;
-        color: #fff;
+        color: var(--purple);
         height: 7rem;
         // font-family: Comic Sans MS;
         font-family: "Montserrat", sans-serif;
@@ -321,6 +315,7 @@ export default {
       height: 3.5rem;
       background: var(--black2);
       &-btn {
+        position: fixed;
         @include flex-center-center;
         position: relative;
         width: 2.5rem;
@@ -354,8 +349,12 @@ export default {
     }
   }
   &-main {
+    position: fixed;
     margin-left: 350px;
     width: calc(100% - 350px);
+    // min-height: 100%;
+    height: 100%;
+    overflow: scroll;
     background: var(--black2);
     transition: all 0.5s;
   }

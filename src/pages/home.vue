@@ -1,63 +1,43 @@
 <template>
-  <Banner />
   <div class="home">
-    <div class="home-head">
-      {{ t("pages.home.in.home") }} / lang:{{ locale }}
-    </div>
-    <div class="home-actions">
-      <router-link to="/login" class="home-actions-btn"
-        ><span>
-          {{ t("pages.home.router.link") }}
-        </span></router-link
-      >
-      <button class="home-actions-btn" @click="toLogin">
-        <span>{{ t("pages.home.router.link") }}</span>
-      </button>
-      <button class="home-actions-btn" @click="swalModal">
-        <span>{{ t("pages.home.modal.swal") }}</span>
-      </button>
-      <button class="home-actions-btn" @click="popupModal">
-        <span>
-          {{ t("pages.home.modal.vip") }}
+    <div class="home-left">
+      <div class="home-left-title">
+        {{ t("$current.self.name") }}
+        <span class="keyword--purple">{{ t("$current.name") }}</span>
+      </div>
+      <div class="home-left-typing">
+        {{ t("$current.self.profession") }}
+        <span class="keyword--purple">
+          {{ t("$current.self.profession.color") }}
         </span>
-      </button>
+      </div>
+      <div class="home-left-caption">{{ t("$current.self.caption") }}</div>
+      <div class="home-left-btn btn">{{ t("$current.self.read") }}</div>
+    </div>
+    <div class="home-right">
+      <div class="home-right-img">
+        <img
+          src="https://qoopio.com/wp-content/uploads/2020/05/%E5%BD%A2%E8%B1%A1%E7%85%A7jpg.jpg"
+          alt=""
+        />
+      </div>
     </div>
   </div>
 </template>
 <script setup>
 import { onMounted } from "vue";
 import { useI18n } from "@/hooks/use-i18n";
-import { useRouter } from "vue-router";
-import { usePopup } from "@/hooks/use-popup";
-import { useAlert } from "@/hooks/use-alert";
-import VipContentModal from "@/widgets/popup/home/vip-content.vue";
-import Banner from "@/widgets/banner.vue";
-const popup = usePopup();
-const { t, locale, setPrefix } = useI18n();
+// import { useRouter } from "vue-router";
+// import { usePopup } from "@/hooks/use-popup";
+// import { useAlert } from "@/hooks/use-alert";
+// const popup = usePopup();
+const { t, setPrefix } = useI18n();
 setPrefix({
   $current: "pages.home",
 });
-const router = useRouter();
-const swal = useAlert();
-const popupModal = async () => {
-  await popup.vip({
-    component: VipContentModal,
-    props: {
-      title: t("pages.home.notify.vip.title"),
-      text: "VIP 1",
-      level: 1,
-    },
-  });
-};
-const toLogin = () => {
-  router.push("/login");
-};
-const swalModal = () => {
-  swal.alert({
-    title: t("$current.modal.swal.title"),
-    text: t("$current.modal.swal"),
-  });
-};
+console.log(t("$current.title"));
+// const router = useRouter();
+// const swal = useAlert();
 onMounted(() => {});
 </script>
 <style lang="scss">

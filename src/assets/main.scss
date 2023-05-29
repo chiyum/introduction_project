@@ -1,10 +1,14 @@
 @import "css/tailwind.css";
 @import "css/animate.css";
+@import "scss/mixin.scss";
 
 :root {
   --black: #111111;
   --orange: #e9700e;
-  --grey:#262626;
+  --grey: #262626;
+  --grey2: #38343f;
+  --purple: #eb6dff;
+  --noHover: #666666;
 }
 
 html,
@@ -155,4 +159,15 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #fafafa;
   -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0) inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+/* btn */
+
+.btn {
+  @include flex-center-center;
+  min-width: 5rem;
+  height: 2rem;
+  color: #fff;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #9f1be9 0%, #781db8 100%);
 }

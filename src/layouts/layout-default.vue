@@ -11,14 +11,14 @@
           y1="0"
           x2="0"
           y2="30"
-          style="stroke: var(--orange); stroke-width: 8"
+          style="stroke: var(--purple); stroke-width: 8"
         />
         <line
           x1="0"
           y1="0"
           x2="30"
           y2="0"
-          style="stroke: var(--orange); stroke-width: 8"
+          style="stroke: var(--purple); stroke-width: 8"
         />
       </svg>
       <!-- <img
@@ -35,14 +35,14 @@
           y1="50"
           x2="20"
           y2="50"
-          style="stroke: var(--orange); stroke-width: 8"
+          style="stroke: var(--purple); stroke-width: 8"
         />
         <line
           x1="50"
           y1="20"
           x2="50"
           y2="50"
-          style="stroke: var(--orange); stroke-width: 8"
+          style="stroke: var(--purple); stroke-width: 8"
         />
       </svg>
     </div>
@@ -61,11 +61,38 @@
       </li>
     </ul>
     <div class="layout-default-nav-actions">
-      <ion-icon
-        class="layout-default-nav-actions-icon"
-        name="settings"
-      ></ion-icon>
-      <div>{{ t("$nav.lang") }}</div>
+      <div class="layout-default-nav-actions-lang" v-if="!language.isCanges">
+        <ion-icon
+          class="layout-default-nav-actions-icon"
+          name="settings"
+        ></ion-icon>
+        <div>{{ t("$nav.lang") }}</div>
+      </div>
+      <div class="layout-default-nav-actions-lang-change" v-else>
+        <div>
+          <select v-model="language.current">
+            <option disabled value="">{{ t("$nav.lang.select") }}</option>
+            <option
+              v-for="(item, index) in language.langs"
+              :key="item.value"
+              :value="item.value"
+              :selected="index === 0"
+            >
+              {{ item.label }}
+            </option>
+            <!-- <option value="">請選擇語言</option>
+            <option value="zh-tw" selected>
+              {{ "中文" }}
+            </option>
+            <option value="en">
+              {{ "英文" }}
+            </option> -->
+          </select>
+        </div>
+        <div class="btn" @click="onChange">
+          {{ t("button.change") }}
+        </div>
+      </div>
     </div>
   </div>
   <div class="layout-default-main">
@@ -75,11 +102,14 @@
 
 <script>
 import { useI18n } from "@/hooks/use-i18n";
-import { ref } from "vue";
-
+import { ref, reactive } from "vue";
+import { useRouter } from "vue-router";
+import storage from "@/services/storage-service";
 export default {
   setup() {
-    const { t, setPrefix } = useI18n();
+    const { t, setPrefix, change: changeLocale } = useI18n();
+    const router = useRouter();
+    console.log(storage);
     setPrefix({
       $nav: "app.nav",
     });
@@ -105,6 +135,14 @@ export default {
         link: "/contact",
       },
     ];
+    const language = reactive({
+      langs: [
+        { value: "zh-tw", label: "繁體中文" },
+        { value: "en", label: "English" },
+      ],
+      isCanges: true,
+      current: "", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
+    });
     const isAnimation = ref(false);
     const logoAnimation = () => {
       /* 執行中則不觸發 依照動畫執行速度在動畫結束後取消calss */
@@ -115,10 +153,17 @@ export default {
         isAnimation.value = false;
       }, 3000);
     };
+    const onChange = () => {
+      changeLocale(language.current);
+      storage.set("locale", language.current);
+      router.go(0);
+    };
     return {
       t,
+      onChange,
       logoAnimation,
       navs,
+      language,
       isAnimation,
     };
   },
@@ -137,7 +182,8 @@ export default {
     padding: 0 0 3rem;
     width: 350px;
     height: 100%;
-    background: var(--grey);
+    background: url("@/assets/images/match-bg.png") var(--grey2) no-repeat
+      center / cover;
     color: #fff;
     cursor: default;
     &-logo {
@@ -208,19 +254,30 @@ export default {
           z-index: 1;
         }
         &:hover {
-          color: var(--orange);
+          color: var(--purple);
         }
       }
     }
     &-actions {
       @include flex-row-center;
       cursor: pointer;
+      & > div {
+        display: flex;
+        align-items: center;
+      }
       &-icon {
         font-size: 1.2rem;
         margin-right: 0.5rem;
       }
       &:hover {
-        color: var(--orange);
+        color: var(--purple);
+      }
+      select {
+        padding: 0.3rem 0.8rem;
+        margin-right: 0.5rem;
+        color: #fff;
+        background: #1e0f24;
+        border-radius: 8px;
       }
     }
   }

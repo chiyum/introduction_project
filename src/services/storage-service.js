@@ -5,6 +5,10 @@ export class StorageService {
     this.provider = new StorageProvider();
   }
 
+  set(key, payload) {
+    this.provider.set(key, payload);
+  }
+
   destroy() {
     this.provider.clearAll();
   }

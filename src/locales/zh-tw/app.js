@@ -6,4 +6,5 @@ export default {
   "nav.contact": "聯絡",
   "nav.project": "作品",
   "nav.lang": "當前語系:繁體中文",
+  "nav.lang.select": "請選擇切換的語言",
 };

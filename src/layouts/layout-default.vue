@@ -227,6 +227,7 @@ export default {
         height: 7rem;
         // font-family: Comic Sans MS;
         font-family: "Montserrat", sans-serif;
+        font-weight: 400;
         h1 {
           font-size: 3rem;
         }

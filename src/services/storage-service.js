@@ -9,6 +9,10 @@ export class StorageService {
     this.provider.set(key, payload);
   }
 
+  get(key) {
+    return this.provider.get(key);
+  }
+
   destroy() {
     this.provider.clearAll();
   }

@@ -8,7 +8,7 @@
       <div class="home-left-typing">
         {{ t("$current.self.profession") }}
         <span class="keyword--purple">
-          {{ t("$current.self.profession.color") }}
+          <TextTyping :to-rotate="[t('$current.self.profession.color')]" />
         </span>
       </div>
       <div class="home-left-caption">{{ t("$current.self.caption") }}</div>
@@ -27,6 +27,7 @@
 <script setup>
 import { onMounted } from "vue";
 import { useI18n } from "@/hooks/use-i18n";
+import TextTyping from "@/widgets/text-typing.vue";
 // import { useRouter } from "vue-router";
 // import { usePopup } from "@/hooks/use-popup";
 // import { useAlert } from "@/hooks/use-alert";

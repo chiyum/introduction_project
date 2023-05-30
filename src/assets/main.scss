@@ -1,16 +1,7 @@
 @import "css/tailwind.css";
 @import "css/animate.css";
 @import "scss/mixin.scss";
-
-:root {
-  --black: #121213;
-  --black2: #231b28;
-  --orange: #e9700e;
-  --grey: #262626;
-  --grey2: #38343f;
-  --purple: #eb6dff;
-  --noHover: #666666;
-}
+@import "scss/root.scss";
 
 html,
 body {

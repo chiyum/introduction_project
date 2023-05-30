@@ -1,7 +1,7 @@
 export default {
   title: "Home",
   "self.name": "Hello! My name is",
-  name: "SHENG-HONG,HUANG.",
+  name: "George Huang.",
   "self.profession": "I am a",
   "self.profession.color": "front-end engineer",
   "self.read": "Learn more about me",

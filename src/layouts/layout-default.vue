@@ -64,6 +64,25 @@
       </li>
     </ul>
     <div class="layout-default-nav-actions">
+      <div class="layout-default-nav-actions-lang-change">
+        <div>
+          <select v-model="language.current">
+            <option
+              v-for="(item, index) in language.langs"
+              :key="item.value"
+              :value="item.value"
+              :selected="index === 0"
+            >
+              {{ item.label }}
+            </option>
+          </select>
+        </div>
+        <div class="btn" @click="onChange">
+          {{ t("button.change") }}
+        </div>
+      </div>
+    </div>
+    <!-- <div class="layout-default-nav-actions">
       <div class="layout-default-nav-actions-lang" v-if="!language.isCanges">
         <ion-icon
           class="layout-default-nav-actions-icon"
@@ -90,7 +109,7 @@
           {{ t("button.change") }}
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="layout-default-main" :class="{ show: isShowNav }">
     <div class="layout-default-nav-mobile">
@@ -146,7 +165,7 @@ export default {
         { value: "en", label: "English" },
       ],
       isCanges: false,
-      current: "", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
+      current: storage.get("locale") || "zh-tw", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
     });
     const isAnimation = ref(false);
     const logoAnimation = () => {
@@ -273,7 +292,8 @@ export default {
       }
       &.layout-default-nav-list--en {
         .layout-default-nav-list-item {
-          letter-spacing: 8px;
+          padding: 0.2rem 2rem;
+          letter-spacing: 2px;
         }
       }
     }

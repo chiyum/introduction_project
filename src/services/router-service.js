@@ -22,4 +22,8 @@ const router = createRouter({
   },
 });
 
+// router.beforeEach(() => {
+//   console.log("切換頁面");
+// });
+
 export default router;

@@ -5,46 +5,10 @@
       :class="{ 'layout-default-nav-logo--jump': isAnimation }"
       @mouseenter="logoAnimation"
     >
-      <!-- <svg class="layout-default-nav-logo-brackets left">
-        <line
-          x1="0"
-          y1="0"
-          x2="0"
-          y2="30"
-          style="stroke: var(--purple); stroke-width: 8"
-        />
-        <line
-          x1="0"
-          y1="0"
-          x2="30"
-          y2="0"
-          style="stroke: var(--purple); stroke-width: 8"
-        />
-      </svg> -->
-      <!-- <img
-        src="@/assets/images/banner/api_placeholder_boardgame_single.png"
-        alt=""
-      /> -->
       <div class="layout-default-nav-logo-font">
         <h1>G</h1>
         <h3>eorge</h3>
       </div>
-      <!-- <svg class="layout-default-nav-logo-brackets right">
-        <line
-          x1="50"
-          y1="50"
-          x2="20"
-          y2="50"
-          style="stroke: var(--purple); stroke-width: 8"
-        />
-        <line
-          x1="50"
-          y1="20"
-          x2="50"
-          y2="50"
-          style="stroke: var(--purple); stroke-width: 8"
-        />
-      </svg> -->
     </div>
     <ul
       class="layout-default-nav-list"
@@ -54,6 +18,7 @@
         class="layout-default-nav-list-item"
         v-for="item in navs"
         :key="item.text"
+        @click="isShowNav = false"
       >
         <ion-icon
           :name="item.icon"

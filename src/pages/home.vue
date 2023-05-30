@@ -12,7 +12,10 @@
         </span>
       </div>
       <div class="home-left-caption">{{ t("$current.self.caption") }}</div>
-      <div class="home-left-btn btn">{{ t("$current.self.read") }}</div>
+      <div class="home-left-btn btn">
+        {{ t("$current.self.read") }}
+        <router-link to="/about"></router-link>
+      </div>
     </div>
     <div class="home-right">
       <div class="home-right-img">
@@ -25,21 +28,12 @@
   </div>
 </template>
 <script setup>
-import { onMounted } from "vue";
 import { useI18n } from "@/hooks/use-i18n";
 import TextTyping from "@/widgets/text-typing.vue";
-// import { useRouter } from "vue-router";
-// import { usePopup } from "@/hooks/use-popup";
-// import { useAlert } from "@/hooks/use-alert";
-// const popup = usePopup();
 const { t, setPrefix } = useI18n();
 setPrefix({
   $current: "pages.home",
 });
-console.log(t("$current.title"));
-// const router = useRouter();
-// const swal = useAlert();
-onMounted(() => {});
 </script>
 <style lang="scss">
 @import "@/assets/scss/home.scss";

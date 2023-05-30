@@ -47,34 +47,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="layout-default-nav-actions">
-      <div class="layout-default-nav-actions-lang" v-if="!language.isCanges">
-        <ion-icon
-          class="layout-default-nav-actions-icon"
-          name="settings"
-          @click="language.isCanges = true"
-        ></ion-icon>
-        <div>{{ t("$nav.lang") }}</div>
-      </div>
-      <div class="layout-default-nav-actions-lang-change" v-else>
-        <div>
-          <select v-model="language.current">
-            <option disabled value="">{{ t("$nav.lang.select") }}</option>
-            <option
-              v-for="(item, index) in language.langs"
-              :key="item.value"
-              :value="item.value"
-              :selected="index === 0"
-            >
-              {{ item.label }}
-            </option>
-          </select>
-        </div>
-        <div class="btn" @click="onChange">
-          {{ t("button.change") }}
-        </div>
-      </div>
-    </div> -->
   </div>
   <div class="layout-default-main" :class="{ show: isShowNav }">
     <div class="layout-default-nav-mobile">
@@ -85,20 +57,27 @@
         <div></div>
       </div>
     </div>
+    <div class="layout-default-main-breadcrumb" v-if="breadcrumb !== ''">
+      {{ t(breadcrumb) }}
+      <div class="layout-default-main-breadcrumb-line"></div>
+    </div>
     <slot />
   </div>
 </template>
 
 <script>
 import { useI18n } from "@/hooks/use-i18n";
-import { ref, reactive } from "vue";
+import { ref, reactive, computed } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
 import storage from "@/services/storage-service";
 export default {
   setup() {
     const { t, setPrefix, change: changeLocale, locale } = useI18n();
     const router = useRouter();
+    const store = useStore();
     const isShowNav = ref(false);
+    const breadcrumb = computed(() => store.state.route.meta.breadcrumb);
     setPrefix({
       $nav: "app.nav",
     });
@@ -155,6 +134,7 @@ export default {
       locale,
       language,
       isShowNav,
+      breadcrumb,
       isAnimation,
     };
   },
@@ -342,6 +322,26 @@ export default {
     overflow: scroll;
     background: var(--black2);
     transition: all 0.5s;
+    &-breadcrumb {
+      color: #fff;
+      font-size: 2.2rem;
+      padding: 3rem 1.2rem 2rem;
+      &-line {
+        margin-bottom: 10px;
+        width: 2.5rem;
+        height: 3px;
+        background: var(--purple);
+        &::after {
+          content: "";
+          display: block;
+          // margin-top: 10px;
+          transform: translateY(10px);
+          width: 1.25rem;
+          height: 3px;
+          background: var(--purple);
+        }
+      }
+    }
   }
 }
 @keyframes jump {
@@ -396,6 +396,9 @@ export default {
       &.show {
         margin-left: 290px;
         width: calc(100% - 290px);
+      }
+      &-breadcrumb {
+        padding: 0 1.2rem 2rem;
       }
     }
   }

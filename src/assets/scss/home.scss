@@ -57,12 +57,20 @@
                 max-height: 4; //解決firefox不支援-webkit-line-clamp的問題
                 line-height: 1.6;
             }
+            &-btn {
+                position: relative;
+                & > a {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
         &-right {
             padding: 1.2rem;
             width: 100%;
             img {
-                min-height: 263px;
+                // min-height: 263px;
                 border-radius: 8px;
             }
         }

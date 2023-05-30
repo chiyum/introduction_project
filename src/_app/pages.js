@@ -18,6 +18,7 @@ for (let path in files) {
       //頁面layout
       layout: defaults[path].default.layout || "layout-default",
       title: defaults[path].default?.title ?? "",
+      breadcrumb: defaults[path].default?.breadcrumb ?? "",
       header: defaults[path].default?.header ?? "header-default",
       scroll: defaults[path].default?.noScroll ?? false,
     },

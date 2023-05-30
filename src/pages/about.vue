@@ -4,15 +4,27 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { useI18n } from "@/hooks/use-i18n";
 import { reactive } from "vue";
-const { t, setPrefix } = useI18n();
-setPrefix({
-  $home: "pages.home",
-  $about: "pages.about",
-});
-const profile = reactive({
-  name: t("$home.name"),
-});
+export default {
+  breadcrumb: "pages.about.title",
+  setup() {
+    const { t, setPrefix } = useI18n();
+    setPrefix({
+      $home: "pages.home",
+      $about: "pages.about",
+    });
+    const profile = reactive({
+      name: t("$home.name"),
+    });
+    return {
+      profile,
+    };
+  },
+};
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/about.scss";
+</style>

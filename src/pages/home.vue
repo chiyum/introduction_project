@@ -1,18 +1,36 @@
 <template>
   <div class="home">
     <div class="home-left">
-      <div class="home-left-title">
+      <div
+        class="home-left-title"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
         {{ t("$current.self.name") }}
         <span class="keyword--purple">{{ t("$current.name") }}</span>
       </div>
-      <div class="home-left-typing">
+      <div
+        class="home-left-typing"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
         {{ t("$current.self.profession") }}
         <span class="keyword--purple">
           <TextTyping :to-rotate="[t('$current.self.profession.color')]" />
         </span>
       </div>
-      <div class="home-left-caption">{{ t("$current.self.caption") }}</div>
-      <div class="home-left-btn btn">
+      <div
+        class="home-left-caption"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        {{ t("$current.self.caption") }}
+      </div>
+      <div
+        class="home-left-btn btn"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         {{ t("$current.self.read") }}
         <router-link to="/about"></router-link>
       </div>

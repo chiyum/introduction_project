@@ -1,6 +1,27 @@
 <template>
   <div class="about">
-    {{ profile.name }}
+    <div class="about-introduction">
+      <div class="about-introduction-title"></div>
+      <div class="about-introduction-caption"></div>
+    </div>
+    <div class="about-profile">
+      <div class="about-profile-list"></div>
+      <div class="about-profile-skill"></div>
+    </div>
+    <div class="about-experience">
+      <div class="about-experience-left left">
+        <h1 class="about-experience-title">title</h1>
+        <ul class="about-experience-list">
+          <li></li>
+        </ul>
+      </div>
+      <div class="about-experience-right right">
+        <h1 class="about-experience-title">title</h1>
+        <ul class="about-experience-list">
+          <li></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 

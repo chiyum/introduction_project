@@ -7,6 +7,11 @@ import storage from "@/plugins/storage";
 import sweetalert from "@/plugins/sweetalert";
 import tabsslider from "@/plugins/tabsslider";
 import VueLazyLoad from "vue3-lazyload";
+import lottie from "lottie-web";
+import { defineElement } from "lord-icon-element";
+
+// define "lord-icon" custom element with default properties
+defineElement(lottie.loadAnimation);
 /** _app */
 import layouts from "@/_app/layouts";
 import components from "@/_app/components";

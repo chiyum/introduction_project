@@ -14,6 +14,7 @@
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { isNil, defaultTo, path } from "ramda";
+import AOS from "aos";
 // import pro168 from "@/assets/images/pro168_logo.png";
 export default {
   setup() {
@@ -44,6 +45,7 @@ export default {
 
     onMounted(() => {
       setVh();
+      AOS.init();
     });
 
     return {

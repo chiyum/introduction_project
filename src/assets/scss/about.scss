@@ -1,4 +1,69 @@
+@import "@/assets/scss/mixin.scss";
+
 .about {
     padding: 0 1.2rem;
     color: #fff;
+    &-introduction {
+        &-title {
+            font-size: 1.5rem;
+        }
+        &-caption {
+            margin-top: 1.5rem;
+            color: var(--caption);
+        }
+    }
+    &-profile {
+        @include flex-row-center;
+        margin-top: 3.5rem;
+        &-list {
+            width: 60%;
+            ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                li {
+                    display: flex;
+                    padding: 1.5rem 0 0.5rem;
+                    margin-right: 1rem;
+                    border-bottom: 1px solid #444444;
+                }
+            }
+            &-label {
+                white-space: nowrap;
+            }
+            &-text {
+                margin-left: 0.6rem;
+                color: var(--caption);
+                word-break: break-all
+            }
+            &-actions {
+                @include flex-row-center;
+                margin-top: 2rem;
+                button {
+                    // min-width: 6rem;
+                    padding: 0 0.5rem;
+                    height: 2rem;
+                    &:first-child {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+        &-skill {
+            width: 40%;
+        }
+    }
+}
+
+@media (max-width: 980px){
+    .about {
+        &-profile {
+            flex-direction: column;
+            &-list {
+                width: 100%;
+            }
+            &-skill {
+                width: 100%;
+            }
+        }
+    }
 }

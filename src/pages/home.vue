@@ -19,18 +19,10 @@
           <TextTyping :to-rotate="[t('$current.self.profession.color')]" />
         </span>
       </div>
-      <div
-        class="home-left-caption"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
+      <div class="home-left-caption">
         {{ t("$current.self.caption") }}
       </div>
-      <div
-        class="home-left-btn btn"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
+      <div class="home-left-btn btn">
         {{ t("$current.self.read") }}
         <router-link to="/about"></router-link>
       </div>

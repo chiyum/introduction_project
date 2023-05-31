@@ -282,7 +282,6 @@ export default {
       &-btn {
         position: fixed;
         @include flex-center-center;
-        position: relative;
         width: 2.5rem;
         height: 2rem;
         background: var(--grey2);
@@ -325,7 +324,7 @@ export default {
     &-breadcrumb {
       color: #fff;
       font-size: 2.2rem;
-      padding: 3rem 1.2rem 2rem;
+      padding: 3rem 1.2rem 3.5rem;
       &-line {
         margin-bottom: 10px;
         width: 2.5rem;

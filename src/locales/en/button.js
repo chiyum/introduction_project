@@ -11,4 +11,6 @@ export default {
   outsideclose: "Click around to close",
   to: "Go now", //立刻前往
   change: "Change",
+  contact: "Mail me",
+  download: "Download Resume",
 };

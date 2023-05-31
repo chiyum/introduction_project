@@ -11,4 +11,6 @@ export default {
   outsideclose: "點擊周圍關閉",
   to: "立刻前往",
   change: "修改",
+  contact: "與我聯絡",
+  download: "下載履歷",
 };

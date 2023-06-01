@@ -45,16 +45,66 @@
       </div>
     </div>
     <div class="about-experience">
-      <div class="about-experience-left left">
-        <h1 class="about-experience-title"></h1>
-        <ul class="about-experience-list">
-          <li></li>
+      <div class="about-experience-block left">
+        <h1 class="about-experience-block-title">
+          {{ t("$about.experience.education") }}
+        </h1>
+        <ul class="about-experience-block-list">
+          <li v-for="(item, index) in profile.education" :key="item">
+            <div class="about-experience-block-list-graphics">
+              <span class="about-experience-block-list-graphics-circle"></span>
+              <span class="about-experience-block-list-graphics-line"></span>
+            </div>
+            <div class="about-experience-block-list-data">
+              <div class="about-experience-block-list-data-date">
+                <ion-icon name="calendar-clear"></ion-icon>
+                <span>{{ item.date }}</span>
+              </div>
+              <div class="about-experience-block-list-data-title">
+                {{ item.place }}
+              </div>
+              <div
+                class="about-experience-block-list-data-caption"
+                :class="{
+                  'about-experience-block-list-data-caption--last':
+                    index === profile.experience.length - 1,
+                }"
+              >
+                {{ item.caption }}
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
-      <div class="about-experience-right right">
-        <h1 class="about-experience-title"></h1>
-        <ul class="about-experience-list">
-          <li></li>
+      <div class="about-experience-block right">
+        <h1 class="about-experience-block-title">
+          {{ t("$about.experience.experience") }}
+        </h1>
+        <ul class="about-experience-block-list">
+          <li v-for="(item, index) in profile.experience" :key="item">
+            <div class="about-experience-block-list-graphics">
+              <span class="about-experience-block-list-graphics-circle"></span>
+              <span class="about-experience-block-list-graphics-line"></span>
+            </div>
+            <div class="about-experience-block-list-data">
+              <div class="about-experience-block-list-data-date">
+                <ion-icon name="calendar-clear"></ion-icon>
+                <span>{{ item.date }}</span>
+              </div>
+              <div class="about-experience-block-list-data-title">
+                {{ item.place }}
+              </div>
+              <div
+                class="about-experience-block-list-data-caption"
+                :class="{
+                  'about-experience-block-list-data-caption--last':
+                    index === profile.experience.length - 1,
+                }"
+              >
+                {{ item.caption }}
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -123,6 +173,40 @@ export default {
         {
           name: "Node.JS",
           percent: 70,
+        },
+      ],
+      experience: [
+        {
+          date: "2022 - now",
+          place: t("$about.experience.experience.title.1"),
+          caption: t("$about.experience.experience.caption.1"),
+        },
+        {
+          date: "2021 - 2022",
+          place: t("$about.experience.experience.title.2"),
+          caption: t("$about.experience.experience.caption.2"),
+        },
+        {
+          date: "2013 - 2021",
+          place: t("$about.experience.experience.title.3"),
+          caption: t("$about.experience.experience.caption.3"),
+        },
+      ],
+      education: [
+        {
+          date: "2022 - now",
+          place: t("$about.experience.education.title.1"),
+          caption: t("$about.experience.education.caption.1"),
+        },
+        {
+          date: "2022 - now",
+          place: t("$about.experience.education.title.2"),
+          caption: t("$about.experience.education.caption.2"),
+        },
+        {
+          date: "2022 - now",
+          place: t("$about.experience.education.title.2"),
+          caption: t("$about.experience.education.caption.2"),
         },
       ],
     });

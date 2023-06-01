@@ -1,7 +1,6 @@
 import swal from "@/plugins/sweetalert";
 import i18n from "@/i18n";
 import store from "@/store";
-import router from "@/router";
 import storage from "store2";
 
 export const getImageUrl = (router) => {
@@ -65,16 +64,6 @@ export const setLang = (lang, isOrigin) => {
   return setLang;
 };
 
-export const failprev = (title, text) => {
-  swal.alert({
-    title: title || i18n.t("app.dialog.system.title"),
-    text: text || i18n.t("pages.trade.empty.trade"),
-    willClose: () => {
-      router.back();
-    },
-  });
-};
-
 export const financial = (x, point = 2) => {
   const hasPoint = x.toString().split(".").length > 1;
   if (hasPoint) return Number.parseFloat(x).toFixed(point);
@@ -93,10 +82,17 @@ export function debounce(func, timeout = 300) {
   };
 }
 
-export const openUrl = (url, isBlank = false) => {
+export const openUrl = (
+  url,
+  option = {
+    isBlank: false,
+    isDownload: false,
+  }
+) => {
   const a = document.createElement("a");
   a.setAttribute("href", url);
-  if (isBlank) a.setAttribute("target", "_blank");
+  if (option?.isBlank) a.setAttribute("target", "_blank");
+  if (option?.isDownload) a.setAttribute("download", "GerogeCV");
   a.style.display = "none";
   document.body.appendChild(a);
   a.click();

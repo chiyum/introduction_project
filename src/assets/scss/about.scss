@@ -192,3 +192,19 @@
         }
     }
 }
+@media (max-width: 520px){
+    .about {
+        &-profile {
+            &-list {
+                ul {
+                    li {
+                        flex-direction: column;
+                    }
+                }
+                &-text {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

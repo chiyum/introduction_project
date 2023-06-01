@@ -21,8 +21,12 @@
           </li>
         </ul>
         <div class="about-profile-list-actions">
-          <button type="button" class="btn">{{ t("button.download") }}</button>
-          <button type="button" class="btn">{{ t("button.contact") }}</button>
+          <button type="button" class="btn" @click="download">
+            {{ t("button.download") }}
+          </button>
+          <button type="button" class="btn" @click="mailLink">
+            {{ t("button.contact") }}
+          </button>
         </div>
       </div>
       <div class="about-profile-skill">
@@ -114,6 +118,8 @@
 <script>
 import { useI18n } from "@/hooks/use-i18n";
 import { reactive } from "vue";
+import { openUrl } from "@/tool";
+import cv from "@/assets/resume.pdf";
 export default {
   breadcrumb: "pages.about.title",
   setup() {
@@ -187,31 +193,42 @@ export default {
           caption: t("$about.experience.experience.caption.2"),
         },
         {
-          date: "2013 - 2021",
+          date: "2014 - 2021",
           place: t("$about.experience.experience.title.3"),
           caption: t("$about.experience.experience.caption.3"),
         },
       ],
       education: [
         {
-          date: "2022 - now",
+          date: "2020",
           place: t("$about.experience.education.title.1"),
           caption: t("$about.experience.education.caption.1"),
         },
         {
-          date: "2022 - now",
+          date: "2014 - 2016",
           place: t("$about.experience.education.title.2"),
           caption: t("$about.experience.education.caption.2"),
         },
         {
-          date: "2022 - now",
-          place: t("$about.experience.education.title.2"),
-          caption: t("$about.experience.education.caption.2"),
+          date: "2011 - 2014",
+          place: t("$about.experience.education.title.3"),
+          caption: t("$about.experience.education.caption.3"),
         },
       ],
     });
+
+    const download = () => {
+      openUrl(cv, { isDownload: true });
+    };
+
+    const mailLink = () => {
+      openUrl("mailto: pray870712@gmail.com", { isBlank: true });
+    };
+
     return {
       t,
+      download,
+      mailLink,
       profile,
     };
   },

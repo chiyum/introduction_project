@@ -12,5 +12,5 @@ export default {
   to: "Go now", //立刻前往
   change: "Change",
   contact: "Mail me",
-  download: "Download Resume",
+  download: "Download CV",
 };

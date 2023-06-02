@@ -1,19 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home animate__animated animate__slow animate__fadeIn">
     <div class="home-left">
-      <div
-        class="home-left-title"
-        data-aos="fade-left"
-        data-aos-duration="1000"
-      >
+      <div class="home-left-title">
         {{ t("$current.self.name") }}
         <span class="keyword--purple">{{ t("$current.name") }}</span>
       </div>
-      <div
-        class="home-left-typing"
-        data-aos="fade-left"
-        data-aos-duration="1000"
-      >
+      <div class="home-left-typing">
         {{ t("$current.self.profession") }}
         <span class="keyword--purple">
           <TextTyping :to-rotate="[t('$current.self.profession.color')]" />

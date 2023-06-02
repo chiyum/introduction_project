@@ -43,6 +43,9 @@
                 background: linear-gradient(90deg, #232326 0%, #3D0053 100%);;
                 transition: 0.8s;
                 opacity: 0;
+                span {
+                    margin-right: 0.2rem;
+                }
             }
             &:hover {
                 .project-list-item-caption {

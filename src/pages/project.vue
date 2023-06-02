@@ -1,12 +1,21 @@
 <template>
-  <div class="project">
+  <div class="project animate__animated animate__slow animate__fadeIn">
     <div class="project-title">
       {{ t("$current.introduction") }}
     </div>
     <ul class="project-list">
       <li class="project-list-item" v-for="item in list" :key="item.title">
         <img :src="item.img" :alt="item.title" />
-        <div class="project-list-item-caption">read more</div>
+        <div class="project-list-item-caption">
+          <span>{{ t("$current.list.view") }}</span>
+          <lord-icon
+            src="https://cdn.lordicon.com/msoeawqm.json"
+            trigger="loop"
+            colors="primary:#ffffff,secondary:#eb6dff"
+            style="width: 1.5rem; height: 1.5rem"
+          >
+          </lord-icon>
+        </div>
       </li>
     </ul>
   </div>

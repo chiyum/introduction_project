@@ -1,5 +1,5 @@
 <template>
-  <div class="contact">
+  <div class="contact animate__animated animate__slow animate__fadeIn">
     {{ profile.name }}
   </div>
 </template>

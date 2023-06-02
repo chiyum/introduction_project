@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about animate__animated animate__slow animate__fadeIn">
     <div class="about-introduction">
       <div class="about-introduction-title">
         {{ t("$in.title")

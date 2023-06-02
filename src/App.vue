@@ -3,7 +3,9 @@
   <component :is="layout">
     <!-- 內層利用router顯示 透過解構賦值 取得從router-view取得的component 在把Component用在:is＝"Component"身上-->
     <router-view v-slot="{ Component }">
+      <!-- <transition name="fade-transform"> -->
       <component :is="Component" />
+      <!-- </transition> -->
     </router-view>
   </component>
 
@@ -55,13 +57,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-// .loading-wrap {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100vh;
-//   img {
-//     width: 45%;
-//   }
+// .fade-transform-enter-active,
+// .fade-transform-leave-active {
+//   transition: opacity 0.5s ease;
+// }
+
+// .fade-transform-enter-from,
+// .fade-transform-leave-to {
+//   opacity: 0;
 // }
 </style>

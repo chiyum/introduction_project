@@ -125,6 +125,7 @@ export default {
       changeLocale(language.current);
       storage.set("locale", language.current);
       router.go(0);
+      // 這邊重整的原因是因為若i18n是賦值在陣列 or 物件中，則不會受此影響。
     };
     return {
       t,
@@ -286,6 +287,7 @@ export default {
         height: 2rem;
         background: var(--grey2);
         border-radius: 2px;
+        z-index: 10;
         & > div {
           width: 60%;
           height: 2px;

@@ -40,12 +40,18 @@
                 color: #fff;
                 // background: linear-gradient(180deg, #A219EE 0%, #6B1DA8 100%);
                 // background: linear-gradient(180deg, #514955 0%, #322C35 100%);
-                background: linear-gradient(90deg, #232326 0%, #3D0053 100%);;
+                background: linear-gradient(90deg, #232326 0%, #3d0053 100%);
                 transition: 0.8s;
                 opacity: 0;
                 span {
                     margin-right: 0.2rem;
                 }
+            }
+            a {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
             }
             &:hover {
                 .project-list-item-caption {
@@ -55,10 +61,13 @@
             }
         }
     }
+    &-detail {
+        padding: 0 1.2rem;
+        color: #fff;
+    }
 }
 
-
-@media (max-width:720px) {
+@media (max-width: 720px) {
     .project {
         &-list {
             justify-content: center;

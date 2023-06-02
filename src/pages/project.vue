@@ -16,6 +16,13 @@
           >
           </lord-icon>
         </div>
+        <a :href="item.url" v-if="item.url !== ''" target="_blank"></a>
+        <router-link
+          :to="{
+            path: '/project/' + item.articleType,
+          }"
+          v-else-if="item.isArticle"
+        ></router-link>
       </li>
     </ul>
   </div>
@@ -36,43 +43,39 @@ export default {
       {
         title: t("$current.list.title.1"),
         img: getImageUrl("portfolio/ant.png"),
-        caption: "test text",
         url: "",
-        isArticle: false,
+        isArticle: true,
+        articleType: "ant",
       },
       {
         title: t("$current.list.title.1"),
         img: getImageUrl("portfolio/electricity.png"),
-        caption: "test text",
-        url: "",
+        url: "https://chiyum.github.io/electricity/",
         isArticle: false,
       },
       {
         title: t("$current.list.title.1"),
         img: getImageUrl("portfolio/vivi.png"),
-        caption: "test text",
         url: "",
-        isArticle: false,
+        isArticle: true,
+        articleType: "vivi",
       },
       {
         title: t("$current.list.title.1"),
         img: getImageUrl("portfolio/dog.png"),
-        caption: "test text",
-        url: "",
+        url: "https://chiyum.github.io/holdkibor/data/jay/index.html#/home",
         isArticle: false,
       },
       {
         title: t("$current.list.title.1"),
         img: getImageUrl("portfolio/vivi.png"),
-        caption: "test text",
         url: "",
         isArticle: false,
       },
       {
         title: t("$current.list.title.1"),
         img: getImageUrl("portfolio/blog.png"),
-        caption: "test text",
-        url: "",
+        url: "https://chiyum.github.io/holdkibor/data/webtree/index.html",
         isArticle: false,
       },
     ]);

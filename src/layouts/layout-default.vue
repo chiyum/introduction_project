@@ -49,6 +49,9 @@
     </div>
   </div>
   <div class="layout-default-main" :class="{ show: isShowNav }">
+    <div class="layout-default-main-bg" v-if="isShowBg">
+      <img src="@/assets/images/top-left-shape.png" alt="" />
+    </div>
     <div class="layout-default-nav-mobile">
       <div
         class="layout-default-nav-mobile-btn"
@@ -68,13 +71,17 @@
 <script>
 import { useI18n } from "@/hooks/use-i18n";
 import { ref, reactive, computed } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { useStore } from "vuex";
 import storage from "@/services/storage-service";
 export default {
   setup() {
     const { t, setPrefix, change: changeLocale, locale } = useI18n();
     const router = useRouter();
+    const route = useRoute();
+    const isShowBg = computed(() => {
+      return ["/project"].includes(route.name);
+    });
     const store = useStore();
     const isShowNav = ref(false);
     const breadcrumb = computed(() => store.state.route.meta.breadcrumb);
@@ -133,6 +140,7 @@ export default {
       logoAnimation,
       navs,
       locale,
+      isShowBg,
       language,
       isShowNav,
       breadcrumb,
@@ -343,6 +351,12 @@ export default {
         }
       }
     }
+    &-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
   }
 }
 @keyframes jump {
@@ -400,6 +414,9 @@ export default {
       }
       &-breadcrumb {
         padding: 0 1.2rem 2rem;
+      }
+      &-bg {
+        display: none;
       }
     }
   }

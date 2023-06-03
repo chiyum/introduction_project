@@ -18,7 +18,7 @@
             display: flex;
             flex-direction: column;
             width: 20rem;
-            height: 12rem;
+            height: 11.5rem;
             border-radius: 8px;
             cursor: pointer;
             overflow: hidden;
@@ -40,7 +40,8 @@
                 color: #fff;
                 // background: linear-gradient(180deg, #A219EE 0%, #6B1DA8 100%);
                 // background: linear-gradient(180deg, #514955 0%, #322C35 100%);
-                background: linear-gradient(90deg, #232326 0%, #3d0053 100%);
+                // background: linear-gradient(90deg, #232326 0%, #3d0053 100%);
+                background: #373748;
                 transition: 0.8s;
                 opacity: 0;
                 span {
@@ -71,6 +72,13 @@
     .project {
         &-list {
             justify-content: center;
+            &-item {
+                &-caption {
+                    bottom: 0;
+                    opacity: 1;
+                    background: #373748;
+                }
+            }
         }
     }
 }

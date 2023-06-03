@@ -7,6 +7,9 @@
       <li class="project-list-item" v-for="item in list" :key="item.title">
         <img :src="item.img" :alt="item.title" />
         <div class="project-list-item-caption">
+          {{ item.title }}
+        </div>
+        <!-- <div class="project-list-item-caption">
           <span>{{ t("$current.list.view") }}</span>
           <lord-icon
             src="https://cdn.lordicon.com/msoeawqm.json"
@@ -15,7 +18,7 @@
             style="width: 1.5rem; height: 1.5rem"
           >
           </lord-icon>
-        </div>
+        </div> -->
         <a :href="item.url" v-if="item.url !== ''" target="_blank"></a>
         <router-link
           :to="{
@@ -48,32 +51,32 @@ export default {
         articleType: "ant",
       },
       {
-        title: t("$current.list.title.1"),
+        title: t("$current.list.title.2"),
         img: getImageUrl("portfolio/electricity.png"),
         url: "https://chiyum.github.io/electricity/",
         isArticle: false,
       },
       {
-        title: t("$current.list.title.1"),
+        title: t("$current.list.title.3"),
         img: getImageUrl("portfolio/vivi.png"),
         url: "",
         isArticle: true,
         articleType: "vivi",
       },
       {
-        title: t("$current.list.title.1"),
+        title: t("$current.list.title.4"),
         img: getImageUrl("portfolio/dog.png"),
         url: "https://chiyum.github.io/holdkibor/data/jay/index.html#/home",
         isArticle: false,
       },
       {
-        title: t("$current.list.title.1"),
-        img: getImageUrl("portfolio/vivi.png"),
-        url: "",
+        title: t("$current.list.title.5"),
+        img: getImageUrl("portfolio/u.png"),
+        url: "https://chiyum.github.io/restaurant/index.html",
         isArticle: false,
       },
       {
-        title: t("$current.list.title.1"),
+        title: t("$current.list.title.6"),
         img: getImageUrl("portfolio/blog.png"),
         url: "https://chiyum.github.io/holdkibor/data/webtree/index.html",
         isArticle: false,

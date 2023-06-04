@@ -36,6 +36,9 @@
         width: 35%;
         &-img {
             height: 50%;
+            img {
+                border-radius: 8px;
+            }
         }
     }
 }

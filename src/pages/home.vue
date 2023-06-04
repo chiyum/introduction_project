@@ -21,10 +21,7 @@
     </div>
     <div class="home-right">
       <div class="home-right-img">
-        <img
-          src="https://qoopio.com/wp-content/uploads/2020/05/%E5%BD%A2%E8%B1%A1%E7%85%A7jpg.jpg"
-          alt=""
-        />
+        <img src="@/assets/images/home/my_img.jpg" alt="" />
       </div>
     </div>
   </div>

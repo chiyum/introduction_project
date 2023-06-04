@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-  <div class="layout-default-main" :class="{ show: isShowNav }">
+  <div class="layout-default-main" ref="main" :class="{ show: isShowNav }">
     <div class="layout-default-main-bg" v-if="isShowBg">
       <img src="@/assets/images/top-left-shape.png" alt="" />
     </div>
@@ -70,15 +70,17 @@
 
 <script>
 import { useI18n } from "@/hooks/use-i18n";
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, onUpdated } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { useStore } from "vuex";
 import storage from "@/services/storage-service";
 export default {
   setup() {
     const { t, setPrefix, change: changeLocale, locale } = useI18n();
+    console.log(locale);
     const router = useRouter();
     const route = useRoute();
+    const main = ref(null);
     const isShowBg = computed(() => {
       return ["/project", "/contact"].includes(route.name);
     });
@@ -116,7 +118,7 @@ export default {
         { value: "en", label: "English" },
       ],
       isCanges: false,
-      current: locale || "zh-tw", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
+      current: locale.value || "zh-tw", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
     });
     const isAnimation = ref(false);
     const logoAnimation = () => {
@@ -133,11 +135,15 @@ export default {
       router.go(0);
       // 這邊重整的原因是因為若i18n是賦值在陣列 or 物件中，則不會受此影響。
     };
+    onUpdated(() => {
+      main.value.scrollTop = 0;
+    });
     return {
       t,
       onChange,
       logoAnimation,
       navs,
+      main,
       locale,
       isShowBg,
       language,

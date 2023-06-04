@@ -155,7 +155,7 @@ export default {
         {
           label: t("$in.label.phone"),
           text: "0975-698910",
-          link: "tel:+886-2-3278918",
+          link: "tel:+886-975-698910",
         },
         {
           label: t("$in.label.city"),

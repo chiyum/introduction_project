@@ -80,7 +80,7 @@ export default {
     const router = useRouter();
     const route = useRoute();
     const isShowBg = computed(() => {
-      return ["/project"].includes(route.name);
+      return ["/project", "/contact"].includes(route.name);
     });
     const store = useStore();
     const isShowNav = ref(false);
@@ -121,7 +121,6 @@ export default {
     const isAnimation = ref(false);
     const logoAnimation = () => {
       /* 執行中則不觸發 依照動畫執行速度在動畫結束後取消calss */
-      console.log("觸發");
       if (isAnimation.value) return;
       isAnimation.value = true;
       setTimeout(() => {

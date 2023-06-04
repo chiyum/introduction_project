@@ -1,6 +1,7 @@
 import viviImg from "@/assets/images/portfolio/vivi.png";
 import antImg from "@/assets/images/portfolio/ant.png";
 import i18n from "@/i18n";
+import { getCurrentPathUrl } from "@/tool";
 export const articles = {
   vivi: [
     {
@@ -16,7 +17,7 @@ export const articles = {
         {
           isLink: true,
           text: i18n.t("pages.project.list.content.keyword.2"),
-          url: "https://pcant-uat.lili77.net/",
+          url: getCurrentPathUrl("/#/project/animate"),
         },
       ],
     },

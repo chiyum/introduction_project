@@ -40,16 +40,16 @@ body {
   animation-duration: 0.3s;
 }
 .swal2-popup.swal2-loading #swal2-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #fff;
   text-align: center;
   padding: 1rem;
   border-radius: 1rem;
-  width: 5rem;
+  // width: 5rem;
   margin: 0 auto;
   padding-top: 2.6rem;
-  background: rgba(0, 0, 0, 0.7) url("@/assets/images/loading.gif") no-repeat center 0.3rem;
-  background-size: 0.7rem auto;
+  background: rgba(0, 0, 0, 0.7) url("@/assets/images/loading.gif") no-repeat center 1rem;
+  background-size: 1.4rem auto;
 }
 .swal2-popup.swal2-alert,
 .swal2-popup.swal2-confirm {

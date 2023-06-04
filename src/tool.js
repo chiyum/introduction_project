@@ -249,3 +249,8 @@ export const keywordSetColor = (inputString, searchText, color) => {
 export const delay = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
+
+export const getCurrentPathUrl = (path) => {
+  let url = new URL(window.location.href).origin;
+  return `${url}${path}`;
+};

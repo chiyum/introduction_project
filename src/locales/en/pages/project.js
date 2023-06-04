@@ -2,6 +2,7 @@ export default {
   title: "Portfolio",
   introduction: "My projects and portfolio:",
   "list.view": "Click to view",
+  rive: "Rive Animate",
   "detail.title": "Project Description",
   "list.title.1": "Gaming Platform-AWD",
   "list.content.1-1": `This project is a game integration platform, using AWD technology, and has designed separate repositories for PC and mobile versions.

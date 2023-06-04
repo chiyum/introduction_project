@@ -54,7 +54,7 @@ export class AlertService {
 
   showLoading() {
     return this.provider.fire({
-      title: "winner winner chicken dinner",
+      title: "Loading",
       showConfirmButton: false,
       customClass: "swal2-loading",
       showClass: {

@@ -3,6 +3,7 @@ export default {
   introduction: "我的專案及作品集:",
   "list.view": "點我查看",
   "detail.title": "作品描述",
+  rive: "Rive 動畫展示區",
   "list.title.1": "遊戲平台-AWD",
   "list.content.1-1": `此專案是一個遊戲集成平台，使用了AWD技術，專為PC版和手機版設計了各自的repository。
 不論是在PC還是手機上，網站都會根據用戶的螢幕大小自動調整佈局，並跳轉到適應該設備的頁面，讓用戶無論在哪種設備上都能得到最佳的體驗。

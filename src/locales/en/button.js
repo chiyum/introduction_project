@@ -9,6 +9,7 @@ export default {
   "got.it": "Understood", //知道了
   submit: "Send", //送出
   outsideclose: "Click around to close",
+  clickclose: "Click to close",
   to: "Go now", //立刻前往
   change: "Change",
   contact: "Mail me",

@@ -17,7 +17,7 @@ export const articles = {
         {
           isLink: true,
           text: i18n.t("pages.project.list.content.keyword.2"),
-          url: getCurrentPathUrl("/#/project/animate"),
+          url: getCurrentPathUrl("/dist/index.html#/project/animate"),
         },
       ],
     },

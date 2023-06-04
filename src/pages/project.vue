@@ -51,17 +51,17 @@ export default {
         articleType: "ant",
       },
       {
-        title: t("$current.list.title.2"),
-        img: getImageUrl("portfolio/electricity.png"),
-        url: "https://chiyum.github.io/electricity/",
-        isArticle: false,
-      },
-      {
         title: t("$current.list.title.3"),
         img: getImageUrl("portfolio/vivi.png"),
         url: "",
         isArticle: true,
         articleType: "vivi",
+      },
+      {
+        title: t("$current.list.title.2"),
+        img: getImageUrl("portfolio/electricity.png"),
+        url: "https://chiyum.github.io/electricity/",
+        isArticle: false,
       },
       {
         title: t("$current.list.title.4"),

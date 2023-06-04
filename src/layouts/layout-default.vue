@@ -337,6 +337,7 @@ export default {
     background: var(--black2);
     transition: all 0.5s;
     &-breadcrumb {
+      white-space: nowrap;
       color: #fff;
       font-size: 2.2rem;
       padding: 3rem 1.2rem 3.5rem;

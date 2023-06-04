@@ -3,7 +3,7 @@ export default {
   introduction: "My projects and portfolio:",
   "list.view": "Click to view",
   "detail.title": "Project Description",
-  rive: "Rive Animation Showcase",
+  rive: "Rive Animation",
   "list.title.1": "Gaming Platform-AWD",
   "list.content.1-1": `This project is a game integration platform that uses AWD technology and has designed separate repositories for PC and mobile versions.
 Whether on a PC or a mobile device, the website will automatically adjust the layout based on the screen size of the user and direct to the page that adapts the device, ensuring the best experience on any device.

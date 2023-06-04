@@ -116,7 +116,7 @@ export default {
         { value: "en", label: "English" },
       ],
       isCanges: false,
-      current: storage.get("locale") || "zh-tw", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
+      current: locale || "zh-tw", // v-modal的值要與select的value對應才會正確顯示 例如option為空，則v-modal預設value也須為空
     });
     const isAnimation = ref(false);
     const logoAnimation = () => {

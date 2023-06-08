@@ -21,7 +21,7 @@
     </div>
     <div class="home-right">
       <div class="home-right-img">
-        <img src="@/assets/images/home/my_img.jpg" alt="" />
+        <img src="@/assets/images/home/logo_normal.png" alt="" />
       </div>
     </div>
   </div>

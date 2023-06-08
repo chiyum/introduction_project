@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <meta name="description" content="just a start project">
-  <meta name="subject" content="<%= subject %>">
+  <meta name="description" content="你好！我是George，這是我的個人介紹頁。">
+  <meta name=”robots” content="index, follow">
   <meta name="keywords" content="<%= keyword %>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,13 @@
     rel="stylesheet">
   <!-- <link id="icon" rel="icon" href="/public/default_foreground.png"> -->
   <link id="icon" rel="icon" href="/public/<%= logo %>">
+  <meta property="og:title" content="George的個人介紹頁">
+  <meta property="og:type" content="介紹頁">
+  <meta property="og:description" content="你好！我是George，這是我的個人介紹頁，這裡有關於我的個人簡介。">
+  <meta property="og:site_name" content="George">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="http://amytw.com">
+  <meta property="og:image" content="/public/<%= logo %>">
   <title>
     <%- title %>
   </title>

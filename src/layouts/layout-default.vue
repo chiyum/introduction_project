@@ -31,7 +31,7 @@
     <div class="layout-default-nav-actions">
       <div class="layout-default-nav-actions-lang-change">
         <div>
-          <select v-model="language.current">
+          <select v-model="language.current" @change="onChange">
             <option
               v-for="(item, index) in language.langs"
               :key="item.value"
@@ -42,9 +42,9 @@
             </option>
           </select>
         </div>
-        <div class="btn" @click="onChange">
+        <!-- <div class="btn" @click="onChange">
           {{ t("button.change") }}
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -272,7 +272,7 @@ export default {
       }
       select {
         padding: 0 0.8rem;
-        padding-right: 1.4rem;
+        padding-right: 2rem;
         margin-right: 0.5rem;
         height: 2rem;
         font-size: 0.8rem;

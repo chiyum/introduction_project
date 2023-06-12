@@ -5,7 +5,13 @@
     </div>
     <ul class="project-list">
       <li class="project-list-item" v-for="item in list" :key="item.title">
-        <img :src="item.img" :alt="item.title" />
+        <img
+          v-lazy="{
+            src: item.img,
+            loading: loading,
+          }"
+          :alt="item.title"
+        />
         <div class="project-list-item-caption">
           {{ item.title }}
         </div>
@@ -32,6 +38,7 @@
 </template>
 
 <script>
+import loading from "@/assets/images/loading.gif";
 import { useI18n } from "@/hooks/use-i18n";
 import { ref } from "vue";
 import { getImageUrl } from "@/tool";
@@ -85,6 +92,7 @@ export default {
     return {
       t,
       list,
+      loading,
     };
   },
 };

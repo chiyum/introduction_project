@@ -55,6 +55,7 @@
     <div class="layout-default-nav-mobile">
       <div
         class="layout-default-nav-mobile-btn"
+        :class="{ 'layout-default-nav-mobile-btn--active': isShowNav }"
         @click="isShowNav = !isShowNav"
       >
         <div></div>
@@ -301,28 +302,52 @@ export default {
         background: var(--grey2);
         border-radius: 2px;
         z-index: 10;
+        transition: all 0.5s;
         & > div {
           width: 60%;
           height: 2px;
           background: var(--purple);
-          &::after,
-          &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: block;
-            width: 60%;
-            height: 2px;
-            background: var(--purple);
-          }
-          &::before {
-            top: 25%;
-          }
-          &::after {
-            top: 75%;
-          }
+        }
+        &::after,
+        &::before {
+          transition: all 0.5s;
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: block;
+          width: 60%;
+          height: 2px;
+          background: var(--purple);
+        }
+        &::before {
+          top: 25%;
+        }
+        &::after {
+          top: 75%;
+        }
+      }
+      &-btn--active {
+        // transform: rotate(360deg);
+        // background: red;
+        & > div {
+          border-radius: 9999px;
+          transform: translateX(0.5px);
+          width: 50%;
+        }
+        &::before,
+        &::after {
+          width: 30%;
+          left: 40%;
+        }
+        &::before {
+          top: 35%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        &::after {
+          top: 65%;
+          transform: translate(-50%, -50%) rotate(45deg);
         }
       }
     }

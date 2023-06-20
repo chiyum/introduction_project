@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import loading from "@/assets/images/loading.gif";
+import loading from "@/assets/images/amalie-steiness.gif";
 import { useI18n } from "@/hooks/use-i18n";
 import { ref } from "vue";
 import { getImageUrl } from "@/tool";

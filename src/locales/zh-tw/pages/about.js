@@ -7,7 +7,7 @@ export default {
   在團隊之中，我與PM、其他前後端有著良好且有效的溝通能力。並且我積極配合團隊的進度，甚至不介意加班。我喜歡與人交流，期望未來有機會能夠一同合作。`,
   "introduce.label.birthday": "生日:",
   "introduce.label.age": "年齡:",
-  "introduce.label.web": "網站:",
+  "introduce.label.web": "Github:",
   "introduce.label.mail": "信箱:",
   "introduce.label.phone": "聯絡號碼:",
   "introduce.label.city": "城市:",

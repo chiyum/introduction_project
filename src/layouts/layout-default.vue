@@ -259,6 +259,7 @@ export default {
     }
     &-actions {
       @include flex-row-center;
+      margin-bottom: 2rem;
       cursor: pointer;
       & > div {
         display: flex;

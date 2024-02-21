@@ -139,13 +139,13 @@ export default {
         },
         {
           label: t("$in.label.age"),
-          text: "24",
+          text: "26",
           link: "",
         },
         {
           label: t("$in.label.web"),
-          text: "https://github.com/chiyum/introduction_project",
-          link: "https://github.com/chiyum/introduction_project",
+          text: "https://github.com/chiyum/chiyum",
+          link: "https://github.com/chiyum/chiyum",
         },
         {
           label: t("$in.label.mail"),

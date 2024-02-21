@@ -354,6 +354,8 @@ export default {
   }
   &-main {
     position: fixed;
+    top: 0;
+    left: 0;
     margin-left: 350px;
     width: calc(100% - 350px);
     // min-height: 100%;

@@ -169,8 +169,8 @@ export default {
           percent: 95,
         },
         {
-          name: "JS",
-          percent: 90,
+          name: "React",
+          percent: 80,
         },
         {
           name: "TS",
@@ -183,7 +183,12 @@ export default {
       ],
       experience: [
         {
-          date: "2022 - now",
+          date: "2023 - now",
+          place: t("$about.experience.experience.title.4"),
+          caption: t("$about.experience.experience.caption.4"),
+        },
+        {
+          date: "2022 - 2023",
           place: t("$about.experience.experience.title.1"),
           caption: t("$about.experience.experience.caption.1"),
         },

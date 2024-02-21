@@ -24,4 +24,5 @@ If you just want to view the custom Rive animation effect, you can >>Click me to
   "list.title.4": "Pet Website Replica-RWD",
   "list.title.5": "Restaurant Official Website-RWD",
   "list.title.6": "Blog-RWD",
+  "list.title.7": "Vue Starter Projects (Including Small Animations)",
 };

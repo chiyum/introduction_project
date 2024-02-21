@@ -65,6 +65,12 @@ export default {
         articleType: "vivi",
       },
       {
+        title: t("$current.list.title.7"),
+        img: getImageUrl("portfolio/start.png"),
+        url: "https://chiyum.github.io/vite_start_project",
+        isArticle: false,
+      },
+      {
         title: t("$current.list.title.2"),
         img: getImageUrl("portfolio/electricity.png"),
         url: "https://chiyum.github.io/electricity/",

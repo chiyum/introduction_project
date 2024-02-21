@@ -24,4 +24,5 @@ export default {
   "list.title.4": "仿刻寵物官網-RWD",
   "list.title.5": "餐飲店官網-RWD",
   "list.title.6": "部落格-RWD",
+  "list.title.7": "Vue起手專案(含小動畫)",
 };

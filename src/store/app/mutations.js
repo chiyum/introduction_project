@@ -13,6 +13,9 @@ const mutations = {
       $timestamp: -1,
     };
   },
+  "set/langKey"(state, payload) {
+    state.langKey = payload;
+  },
 };
 
 export default mutations;

@@ -7,6 +7,7 @@ const state = () => {
       $timestamp: -1,
     },
     tips: [],
+    langKey: "zh-tw",
   };
 };
 //主要state

@@ -72,14 +72,14 @@
 <script>
 import { useI18n } from "@/hooks/use-i18n";
 import { ref, reactive, computed, onUpdated } from "vue";
-import { useRouter, useRoute } from "vue-router";
+import { useRoute } from "vue-router";
 import { useStore } from "vuex";
 import storage from "@/services/storage-service";
 export default {
   setup() {
     const { t, setPrefix, change: changeLocale, locale } = useI18n();
     console.log(locale);
-    const router = useRouter();
+    // const router = useRouter();
     const route = useRoute();
     const main = ref(null);
     const isShowBg = computed(() => {
@@ -133,7 +133,7 @@ export default {
     const onChange = () => {
       changeLocale(language.current);
       storage.set("locale", language.current);
-      router.go(0);
+      // router.go(0);
       // 這邊重整的原因是因為若i18n是賦值在陣列 or 物件中，則不會受此影響。
     };
     onUpdated(() => {

@@ -183,7 +183,12 @@ export default {
       ],
       experience: [
         {
-          date: "2023 - now",
+          date: "2024 - now",
+          place: t("$about.experience.experience.title.5"),
+          caption: t("$about.experience.experience.caption.5"),
+        },
+        {
+          date: "2023 - 2024",
           place: t("$about.experience.experience.title.4"),
           caption: t("$about.experience.experience.caption.4"),
         },

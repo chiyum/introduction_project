@@ -1,6 +1,6 @@
 <template>
   <!-- 外層利用is載入layout -->
-  <component :is="layout">
+  <component :is="layout" :key="langKey">
     <!-- 內層利用router顯示 透過解構賦值 取得從router-view取得的component 在把Component用在:is＝"Component"身上-->
     <router-view v-slot="{ Component }">
       <!-- <transition name="fade-transform"> -->
@@ -13,14 +13,18 @@
 </template>
 
 <script>
-import { computed, onMounted } from "vue";
+import { computed, onMounted, watch } from "vue";
 import { useStore } from "vuex";
 import { isNil, defaultTo, path } from "ramda";
 import AOS from "aos";
+import useI18n from "./hooks/use-i18n";
 // import pro168 from "@/assets/images/pro168_logo.png";
 export default {
   setup() {
     const store = useStore(); //啟用vuex
+    const { locale } = useI18n(); //啟用i18n
+    store.commit("app/set/langKey", locale); //將i18n的語言狀態存入vuex
+    const langKey = computed(() => store.state.app.langKey); //取得vuex的語言狀態
     const layout = computed(() => {
       /* 一開始都是 undefined */
       /* isNil為檢查空值，為null或undefined則return null */
@@ -50,8 +54,14 @@ export default {
       AOS.init();
     });
 
+    watch(langKey, (newValue) => {
+      console.log("langKey", newValue);
+      store.commit("set/langKey", newValue);
+    });
+
     return {
       layout,
+      langKey,
     };
   },
 };
